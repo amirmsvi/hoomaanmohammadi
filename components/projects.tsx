@@ -1,11 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -13,18 +20,19 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ChevronRight, ExternalLink } from "lucide-react"
+} from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ChevronRight, ExternalLink } from "lucide-react";
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("all")
+  const [activeTab, setActiveTab] = useState("all");
 
   const projects = [
     {
       id: 1,
       title: "Battery Fuel Gauge Modeling",
-      description: "Developed battery fuel gauge models using MATLAB for accurate power estimation",
+      description:
+        "Developed battery fuel gauge models using MATLAB for accurate power estimation",
       image: "/placeholder.svg?height=600&width=800",
       category: "simulation",
       tags: ["MATLAB", "Battery Modeling", "Power Systems"],
@@ -39,7 +47,8 @@ export default function Projects() {
     {
       id: 2,
       title: "170-Seat Passenger Aircraft Design",
-      description: "Designed a 170-seat passenger aircraft with turbofan engine using SolidWorks and ANSYS",
+      description:
+        "Designed a 170-seat passenger aircraft with turbofan engine using SolidWorks and ANSYS",
       image: "/placeholder.svg?height=600&width=800",
       category: "design",
       tags: ["SolidWorks", "ANSYS", "Aerospace Design"],
@@ -54,7 +63,8 @@ export default function Projects() {
     {
       id: 3,
       title: "Stress/Strain Analysis in Baseball Bats",
-      description: "Modeled and analyzed stress/strain in metal and composite baseball bats using ANSYS",
+      description:
+        "Modeled and analyzed stress/strain in metal and composite baseball bats using ANSYS",
       image: "/placeholder.svg?height=600&width=800",
       category: "analysis",
       tags: ["ANSYS", "Stress Analysis", "Composite Materials"],
@@ -69,7 +79,8 @@ export default function Projects() {
     {
       id: 4,
       title: "Composite Layer Optimization for Aircraft Wings",
-      description: "Optimized the arrangement of composite layers in airplane wings for improved performance",
+      description:
+        "Optimized the arrangement of composite layers in airplane wings for improved performance",
       image: "/placeholder.svg?height=600&width=800",
       category: "optimization",
       tags: ["Composite Materials", "Structural Optimization", "Aerospace"],
@@ -84,7 +95,8 @@ export default function Projects() {
     {
       id: 5,
       title: "Open Circuit Voltage Modeling",
-      description: "Developed models for predicting open circuit voltage in various electrical systems",
+      description:
+        "Developed models for predicting open circuit voltage in various electrical systems",
       image: "/placeholder.svg?height=600&width=800",
       category: "electrical",
       tags: ["Voltage Modeling", "Electrical Systems", "Simulation"],
@@ -99,7 +111,8 @@ export default function Projects() {
     {
       id: 6,
       title: "Wind Turbine Blade Analysis",
-      description: "Analyzed stress-strain and displacement characteristics of wind turbine blades",
+      description:
+        "Analyzed stress-strain and displacement characteristics of wind turbine blades",
       image: "/placeholder.svg?height=600&width=800",
       category: "renewable",
       tags: ["Wind Energy", "Structural Analysis", "Renewable Technology"],
@@ -114,7 +127,8 @@ export default function Projects() {
     {
       id: 7,
       title: "Tensile Fracture in Polycrystalline Graphite",
-      description: "Investigated tensile fracture mechanisms in cut polycrystalline graphite samples",
+      description:
+        "Investigated tensile fracture mechanisms in cut polycrystalline graphite samples",
       image: "/placeholder.svg?height=600&width=800",
       category: "materials",
       tags: ["Material Science", "Fracture Mechanics", "Graphite Analysis"],
@@ -129,7 +143,8 @@ export default function Projects() {
     {
       id: 8,
       title: "Vertical Flying Drone Design",
-      description: "Conceptual design and analysis of a vertical flying drone using Ansys and Catia",
+      description:
+        "Conceptual design and analysis of a vertical flying drone using Ansys and Catia",
       image: "/placeholder.svg?height=600&width=800",
       category: "design",
       tags: ["Drone Design", "ANSYS", "CATIA"],
@@ -141,9 +156,12 @@ export default function Projects() {
         "The final design achieved excellent stability characteristics and power efficiency. Structural analysis confirmed the design's durability under various flight conditions, and the propulsion system provided adequate thrust with reasonable power consumption.",
       link: "#",
     },
-  ]
+  ];
 
-  const filteredProjects = activeTab === "all" ? projects : projects.filter((project) => project.category === activeTab)
+  const filteredProjects =
+    activeTab === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeTab);
 
   const container = {
     hidden: { opacity: 0 },
@@ -153,15 +171,15 @@ export default function Projects() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-24 bg-gray-950">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -170,23 +188,71 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center text-center mb-12"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Projects</h2>
-          <p className="mt-4 text-xl text-muted-foreground max-w-[800px]">
-            A selection of my engineering projects showcasing innovation and technical expertise
+          <div className="relative mb-6">
+            <div className="absolute -inset-1 bg-gradient-to-r from-teal-600 via-teal-400 to-teal-600 rounded-lg blur opacity-25"></div>
+            <div className="relative px-6 py-2 bg-gray-950 rounded-md border border-teal-500/20">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
+                Featured <span className="text-teal-400">Projects</span>
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-xl text-gray-300 max-w-[800px]">
+            A selection of my engineering projects showcasing innovation and
+            technical expertise
           </p>
         </motion.div>
 
         <Tabs defaultValue="all" className="mb-8" onValueChange={setActiveTab}>
           <div className="flex justify-center">
-            <TabsList>
-              <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="simulation">Simulation</TabsTrigger>
-              <TabsTrigger value="design">Design</TabsTrigger>
-              <TabsTrigger value="analysis">Analysis</TabsTrigger>
-              <TabsTrigger value="optimization">Optimization</TabsTrigger>
-              <TabsTrigger value="electrical">Electrical</TabsTrigger>
-              <TabsTrigger value="renewable">Renewable</TabsTrigger>
-              <TabsTrigger value="materials">Materials</TabsTrigger>
+            <TabsList className="bg-gray-800 border border-gray-700">
+              <TabsTrigger
+                value="all"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                All Projects
+              </TabsTrigger>
+              <TabsTrigger
+                value="simulation"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                Simulation
+              </TabsTrigger>
+              <TabsTrigger
+                value="design"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                Design
+              </TabsTrigger>
+              <TabsTrigger
+                value="analysis"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                Analysis
+              </TabsTrigger>
+              <TabsTrigger
+                value="optimization"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                Optimization
+              </TabsTrigger>
+              <TabsTrigger
+                value="electrical"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                Electrical
+              </TabsTrigger>
+              <TabsTrigger
+                value="renewable"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                Renewable
+              </TabsTrigger>
+              <TabsTrigger
+                value="materials"
+                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+              >
+                Materials
+              </TabsTrigger>
             </TabsList>
           </div>
 
@@ -204,33 +270,43 @@ export default function Projects() {
             </motion.div>
           </TabsContent>
 
-          {["simulation", "design", "analysis", "optimization", "electrical", "renewable", "materials"].map(
-            (category) => (
-              <TabsContent key={category} value={category} className="mt-8">
-                <motion.div
-                  variants={container}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
-                  {filteredProjects.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
-                  ))}
-                </motion.div>
-              </TabsContent>
-            ),
-          )}
+          {[
+            "simulation",
+            "design",
+            "analysis",
+            "optimization",
+            "electrical",
+            "renewable",
+            "materials",
+          ].map((category) => (
+            <TabsContent key={category} value={category} className="mt-8">
+              <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              >
+                {filteredProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </motion.div>
+            </TabsContent>
+          ))}
         </Tabs>
       </div>
     </section>
-  )
+  );
 }
 
 function ProjectCard({ project }: { project: any }) {
   return (
-    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}>
-      <Card className="overflow-hidden h-full flex flex-col">
+    <motion.div
+      variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+      whileHover={{ y: -5 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <Card className="overflow-hidden h-full flex flex-col bg-gray-900 border-gray-800 hover:border-teal-500/30 transition-colors">
         <div className="relative aspect-video overflow-hidden">
           <Image
             src={project.image || "/placeholder.svg"}
@@ -238,52 +314,84 @@ function ProjectCard({ project }: { project: any }) {
             fill
             className="object-cover transition-transform duration-300 hover:scale-105"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
         </div>
-        <CardHeader>
-          <CardTitle>{project.title}</CardTitle>
-          <CardDescription>{project.description}</CardDescription>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-white">{project.title}</CardTitle>
+          <CardDescription className="text-gray-400">
+            {project.description}
+          </CardDescription>
         </CardHeader>
-        <CardContent className="flex-grow">
+        <CardContent className="flex-grow pt-0">
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag: string, index: number) => (
-              <Badge key={index} variant="secondary">
+              <Badge
+                key={index}
+                variant="secondary"
+                className="bg-teal-900/30 text-teal-300 hover:bg-teal-900/50 border-teal-800/30"
+              >
                 {tag}
               </Badge>
             ))}
           </div>
         </CardContent>
-        <CardFooter className="flex justify-between">
+        <CardFooter className="flex justify-between border-t border-gray-800 pt-4">
           <Dialog>
             <DialogTrigger asChild>
-              <Button variant="outline">View Details</Button>
+              <Button
+                variant="outline"
+                className="border-teal-900/50 text-teal-400 hover:bg-teal-900/20 hover:text-teal-300"
+              >
+                View Details
+              </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-3xl">
+            <DialogContent className="max-w-3xl bg-gray-900 border-gray-800 text-gray-100">
               <DialogHeader>
-                <DialogTitle>{project.title}</DialogTitle>
-                <DialogDescription>
-                  {project.category.charAt(0).toUpperCase() + project.category.slice(1)} Project
+                <DialogTitle className="text-white text-xl">
+                  {project.title}
+                </DialogTitle>
+                <DialogDescription className="text-gray-400">
+                  {project.category.charAt(0).toUpperCase() +
+                    project.category.slice(1)}{" "}
+                  Project
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
                 <div className="relative aspect-video overflow-hidden rounded-lg">
-                  <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-40"></div>
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-medium">Overview</h4>
-                    <p className="text-sm text-muted-foreground mt-1">{project.fullDescription}</p>
+                    <h4 className="font-medium text-teal-300">Overview</h4>
+                    <p className="text-sm text-gray-300 mt-1">
+                      {project.fullDescription}
+                    </p>
                   </div>
                   <div>
-                    <h4 className="font-medium">Challenges</h4>
-                    <p className="text-sm text-muted-foreground mt-1">{project.challenges}</p>
+                    <h4 className="font-medium text-teal-300">Challenges</h4>
+                    <p className="text-sm text-gray-300 mt-1">
+                      {project.challenges}
+                    </p>
                   </div>
                   <div>
-                    <h4 className="font-medium">Outcomes</h4>
-                    <p className="text-sm text-muted-foreground mt-1">{project.outcomes}</p>
+                    <h4 className="font-medium text-teal-300">Outcomes</h4>
+                    <p className="text-sm text-gray-300 mt-1">
+                      {project.outcomes}
+                    </p>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag: string, index: number) => (
-                      <Badge key={index} variant="outline">
+                      <Badge
+                        key={index}
+                        variant="outline"
+                        className="border-teal-800/50 text-teal-300"
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -291,15 +399,28 @@ function ProjectCard({ project }: { project: any }) {
                 </div>
               </div>
               <div className="flex justify-end">
-                <Button asChild>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <Button
+                  asChild
+                  className="bg-teal-600 hover:bg-teal-700 text-white"
+                >
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
                     View Project <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </div>
             </DialogContent>
           </Dialog>
-          <Button variant="ghost" size="icon" asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="text-gray-400 hover:text-teal-400 hover:bg-transparent"
+          >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <ChevronRight className="h-4 w-4" />
               <span className="sr-only">View project</span>
@@ -308,6 +429,5 @@ function ProjectCard({ project }: { project: any }) {
         </CardFooter>
       </Card>
     </motion.div>
-  )
+  );
 }
-
