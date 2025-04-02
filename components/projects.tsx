@@ -204,56 +204,59 @@ export default function Projects() {
 
         <Tabs defaultValue="all" className="mb-8" onValueChange={setActiveTab}>
           <div className="flex justify-center">
-            <TabsList className="bg-gray-800 border border-gray-700">
-              <TabsTrigger
-                value="all"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                All Projects
-              </TabsTrigger>
-              <TabsTrigger
-                value="simulation"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                Simulation
-              </TabsTrigger>
-              <TabsTrigger
-                value="design"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                Design
-              </TabsTrigger>
-              <TabsTrigger
-                value="analysis"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                Analysis
-              </TabsTrigger>
-              <TabsTrigger
-                value="optimization"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                Optimization
-              </TabsTrigger>
-              <TabsTrigger
-                value="electrical"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                Electrical
-              </TabsTrigger>
-              <TabsTrigger
-                value="renewable"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                Renewable
-              </TabsTrigger>
-              <TabsTrigger
-                value="materials"
-                className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
-              >
-                Materials
-              </TabsTrigger>
-            </TabsList>
+            {/* Added a scrollable wrapper for the TabsList */}
+            <div className="overflow-x-auto w-full">
+              <TabsList className="bg-gray-800 border border-gray-700 whitespace-nowrap">
+                <TabsTrigger
+                  value="all"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  All Projects
+                </TabsTrigger>
+                <TabsTrigger
+                  value="simulation"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  Simulation
+                </TabsTrigger>
+                <TabsTrigger
+                  value="design"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  Design
+                </TabsTrigger>
+                <TabsTrigger
+                  value="analysis"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  Analysis
+                </TabsTrigger>
+                <TabsTrigger
+                  value="optimization"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  Optimization
+                </TabsTrigger>
+                <TabsTrigger
+                  value="electrical"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  Electrical
+                </TabsTrigger>
+                <TabsTrigger
+                  value="renewable"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  Renewable
+                </TabsTrigger>
+                <TabsTrigger
+                  value="materials"
+                  className="data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-300"
+                >
+                  Materials
+                </TabsTrigger>
+              </TabsList>
+            </div>
           </div>
 
           <TabsContent value="all" className="mt-8">
