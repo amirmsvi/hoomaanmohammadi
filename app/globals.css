@@ -59,7 +59,98 @@
   }
 }
 
+@layer utilities {
+  /* Teal color utilities */
+  .bg-teal-900\/20 {
+    background-color: rgba(19, 78, 74, 0.2);
+  }
+
+  .bg-teal-900\/30 {
+    background-color: rgba(19, 78, 74, 0.3);
+  }
+
+  .bg-teal-900\/40 {
+    background-color: rgba(19, 78, 74, 0.4);
+  }
+
+  .bg-teal-800\/50 {
+    background-color: rgba(20, 83, 45, 0.5);
+  }
+
+  .border-teal-500\/20 {
+    border-color: rgba(20, 184, 166, 0.2);
+  }
+
+  .border-teal-500\/30 {
+    border-color: rgba(20, 184, 166, 0.3);
+  }
+
+  .border-teal-900\/40 {
+    border-color: rgba(19, 78, 74, 0.4);
+  }
+
+  .border-teal-600\/40 {
+    border-color: rgba(13, 148, 136, 0.4);
+  }
+
+  .text-teal-200\/80 {
+    color: rgba(153, 246, 228, 0.8);
+  }
+
+  .text-teal-300 {
+    color: rgb(94, 234, 212);
+  }
+
+  .text-teal-400 {
+    color: rgb(45, 212, 191);
+  }
+
+  .bg-teal-500 {
+    background-color: rgb(20, 184, 166);
+  }
+
+  .bg-teal-600 {
+    background-color: rgb(13, 148, 136);
+  }
+
+  .bg-teal-700 {
+    background-color: rgb(15, 118, 110);
+  }
+
+  .bg-teal-950 {
+    background-color: rgb(4, 35, 33);
+  }
+
+  .border-teal-500 {
+    border-color: rgb(20, 184, 166);
+  }
+
+  /* Gray color utilities */
+  .bg-gray-950 {
+    background-color: rgb(3, 7, 18);
+  }
+
+  .bg-gray-950\/90 {
+    background-color: rgba(3, 7, 18, 0.9);
+  }
+
+  .bg-gray-950\/70 {
+    background-color: rgba(3, 7, 18, 0.7);
+  }
+
+  .bg-gray-900\/80 {
+    background-color: rgba(17, 24, 39, 0.8);
+  }
+
+  .bg-gray-900\/70 {
+    background-color: rgba(17, 24, 39, 0.7);
+  }
+
+  .bg-gray-800\/50 {
+    background-color: rgba(31, 41, 55, 0.5);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
-
